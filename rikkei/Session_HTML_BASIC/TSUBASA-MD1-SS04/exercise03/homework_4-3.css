@@ -1,0 +1,22 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{   
+    padding:10px;
+    text-decoration: dashed;
+}
+input{  
+    width: 300px;
+}
+textarea{   
+    width: 300px;
+}
+button{
+    width: 300px;
+    background-color: #3FBF4A;
+    color: white;
+    border-radius: 4px; 
+}

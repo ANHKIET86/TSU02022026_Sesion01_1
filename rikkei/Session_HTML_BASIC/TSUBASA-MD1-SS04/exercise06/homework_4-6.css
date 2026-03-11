@@ -1,0 +1,23 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div{
+    background-color: #FEF8DC;
+    text-align: center;
+    padding: 15px;
+}
+h2{ 
+    color:#11008B;
+}
+
+div button{
+    padding:10px;
+}
+div button:hover{
+    background-color: #278000;
+    color:white;
+}

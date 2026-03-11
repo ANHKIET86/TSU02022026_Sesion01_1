@@ -1,0 +1,22 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{ 
+    text-align: center;
+    color:white;
+    background-color: black;
+    padding:20px;
+}
+p{
+    background-color: #DDDDDD  ;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #313131;
+    margin-right: 10px;
+}

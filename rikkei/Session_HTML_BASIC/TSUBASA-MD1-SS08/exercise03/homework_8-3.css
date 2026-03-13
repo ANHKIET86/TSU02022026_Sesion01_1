@@ -1,0 +1,34 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* container */
+.flex-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* item */
+.flex-item {
+    width: 50%;
+    background-color: black;
+    color:White;
+    height: 50px;
+    padding-left: 30px;
+    line-height: 50px;
+}
+
+/* khối lớn */
+.large {
+    width: 100%;
+}
+
+/* responsive */
+@media screen and (max-width: 1024px) {
+    .flex-item {
+        width: 100%;
+    }
+}

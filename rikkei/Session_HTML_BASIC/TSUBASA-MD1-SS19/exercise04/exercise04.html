@@ -1,18 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Virtual Keyboard</title>
-    <link rel="stylesheet" href="./exercise04.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo App</title>
+  <link rel="stylesheet" href="./exercise04.css" />
 </head>
 <body>
+  <main class="card">
+    <h1 class="title">Todo App</h1>
 
-<div class="container">
-    <input type="text" id="display" placeholder="Nhập ở đây..." readonly>
+    <section class="add-row">
+      <input id="todoInput" class="input" placeholder="Add your new todo" />
+      <button id="addBtn" class="btn btn-primary" title="Add">+</button>
+    </section>
 
-    <div class="keyboard" id="keyboard"></div>
-</div>
+    <section id="list" class="list"></section>
 
-<script src="./exercise04.js"></script>
+    <footer class="footer">
+      <div class="count">
+        You have <b id="pendingCount">0</b> pending tasks
+      </div>
+      <button id="clearBtn" class="btn btn-clear">Clear All</button>
+    </footer>
+  </main>
+
+  <script src="./exercise04.js"></script>
 </body>
 </html>

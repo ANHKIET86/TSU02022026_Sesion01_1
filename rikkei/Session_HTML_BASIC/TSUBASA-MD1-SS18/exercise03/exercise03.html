@@ -1,48 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-      .modal {
-        background-color: #fff;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        padding: 20px;
-        border-radius: 4px;
-        min-width: 300px;
-      }
-      .modal-body {
-        position: relative;
-      }
-      .btn-close {
-        position: absolute;
-        top: -15px;
-        right: -10px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Modal Example</h1>
-    <button class="btn-open">Open Modal</button>
-    <!-- overlay -->
-    <div class="overlay">
-      <div class="modal">
-        <div class="modal-body">
-          Some text in the modal
-          <spa class="btn-close">x</spa>
-        </div>
-      </div>
-    </div>
-    <script src="./exercise03.js"></script>
-  </body>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <link rel="stylesheet" href="./exercise03.css">
+</head>
+<body>
+
+<h2>Danh sách sản phẩm</h2>
+
+<div class="buttons">
+    <button onclick="showProducts()">Hiển thị</button>
+    <button onclick="addProduct()">Thêm</button>
+    <button onclick="deleteId2()">Xóa id = 2</button>
+    <button onclick="findButter()">Tìm Butter</button>
+</div>
+
+<ul id="list"></ul>
+
+<script src="./exercise03.js"></script>
+
+</body>
 </html>

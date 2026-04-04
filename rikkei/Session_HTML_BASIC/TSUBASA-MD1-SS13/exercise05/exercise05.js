@@ -1,31 +1,24 @@
-const RATE = 25000; // 1 USD = 25,000 VND
-
-function askUSD() {
-  while (true) {
-    const raw = prompt("Nhập số tiền Đô la Mỹ (USD):");
-    if (raw === null) return null; // Cancel
-
-    const usd = Number(String(raw).trim());
-    if (Number.isFinite(usd) && usd >= 0) return usd;
-
-    alert("Số tiền không hợp lệ. Vui lòng nhập lại (USD >= 0).");
-  }
+// Tạo mảng số nguyên có độ dài ngẫu nhiên từ 10 đến 20
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function formatVND(vnd) {
-  // format kiểu VN: 1.234.567 đ
-  return vnd.toLocaleString("vi-VN") + " đ";
+const length = randomInt(10, 20);
+
+// Bạn có thể đổi khoảng giá trị phần tử nếu muốn (ví dụ -50..50)
+const arr = Array.from({ length }, () => randomInt(0, 100));
+
+// Tính tổng lẻ / chẵn
+let sumOdd = 0;
+let sumEven = 0;
+
+for (const n of arr) {
+  if (n % 2 === 0) sumEven += n;
+  else sumOdd += n;
 }
 
-(function run() {
-  const usd = askUSD();
-  if (usd === null) return;
+// Hiển thị bằng alert()
+alert("Mảng vừa tạo (" + arr.length + " phần tử):\n[" + arr.join(", ") + "]");
 
-  const vnd = usd * RATE;
-
-  alert(
-    `Tỷ giá: 1$ = ${RATE.toLocaleString("vi-VN")} đ\n` +
-    `Số tiền USD: ${usd}\n` +
-    `Quy đổi: ${formatVND(vnd)}`
-  );
-})();
+alert("Tổng các số lẻ = " + sumOdd);
+alert("Tổng các số chẵn = " + sumEven);

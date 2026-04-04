@@ -3,33 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tính điểm trung bình 3 môn</title>
+  <title>Đếm số lần xuất hiện</title>
 </head>
 <body>
-  <h2>Tính điểm trung bình</h2>
+  <h2>Đếm số lần xuất hiện của k trong mảng</h2>
+
+  <p><b>Mảng:</b> <span id="arrText"></span></p>
 
   <label>
-    Math:
-    <input id="math" type="number" step="0.1" placeholder="VD: 8" />
+    Nhập số nguyên k:
+    <input id="kInput" type="number" step="1" placeholder="VD: 5" />
   </label>
-  <br><br>
-
-  <label>
-    Physics:
-    <input id="physics" type="number" step="0.1" placeholder="VD: 7.5" />
-  </label>
-  <br><br>
-
-  <label>
-    Chemistry:
-    <input id="chemistry" type="number" step="0.1" placeholder="VD: 9" />
-  </label>
-  <br><br>
-
-  <button id="calcBtn">Tính điểm trung bình</button>
+  <button id="checkBtn">Kiểm tra</button>
 
   <h3>Kết quả</h3>
-  <div id="output">Chưa tính.</div>
+  <div id="result">Chưa kiểm tra.</div>
 
   <script src="./exercise06.js"></script>
 </body>

@@ -1,11 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script src="./exercise05.js"></script>
-  </body>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quản lý danh sách sinh viên</title>
+  <link rel="stylesheet" href="./exercise05.css" />
+</head>
+<body>
+  <main class="card">
+    <h1>Quản lý danh sách sinh viên</h1>
+
+    <section class="form">
+      <div class="row">
+        <input id="nameInput" class="input" placeholder="Tên sinh viên" />
+        <input id="ageInput" class="input" placeholder="Tuổi" inputmode="numeric" />
+      </div>
+      <div class="row">
+        <input id="classInput" class="input" placeholder="Lớp" />
+        <button id="submitBtn" class="btn btn-primary">Thêm sinh viên</button>
+      </div>
+
+      <div class="row">
+        <input id="searchInput" class="input" placeholder="Tìm kiếm sinh viên..." />
+      </div>
+    </section>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Tên</th>
+          <th>Tuổi</th>
+          <th>Lớp</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+
+    <div class="footer">
+      <div class="muted">
+        Tổng: <b id="totalCount">0</b> • Đang hiển thị: <b id="shownCount">0</b>
+      </div>
+      <button id="clearBtn" class="btn btn-ghost">Xoá tất cả</button>
+    </div>
+  </main>
+
+  <script src="./exercise05.js"></script>
+</body>
 </html>

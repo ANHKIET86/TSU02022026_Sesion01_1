@@ -1,8 +1,5 @@
-const book = {
-    title: 'JavaScript Basics',
-    author: 'John Smith',
-    pager: 200
-  };
-  
-  delete book.pager;
-  console.log(book);
+function sum(firstNumber, secondNumber) {
+  return firstNumber + secondNumber;
+}
+
+alert(sum(1, 2));

@@ -1,56 +1,44 @@
-function askNumber(message) {
-  while (true) {
-    const raw = prompt(message);
-    if (raw === null) return null; // user bấm Cancel
+// Khai báo 3 biến đại diện điểm môn học (lấy từ input)
+const mathEl = document.getElementById("math");
+const physicsEl = document.getElementById("physics");
+const chemistryEl = document.getElementById("chemistry");
 
-    const n = Number(String(raw).trim());
-    if (Number.isFinite(n)) return n;
+const calcBtn = document.getElementById("calcBtn");
+const output = document.getElementById("output");
 
-    alert("Giá trị không hợp lệ, vui lòng nhập lại số.");
-  }
+function parseScore(value) {
+  const n = Number(String(value).trim());
+  // Thường điểm 0..10, bạn có thể đổi theo thang điểm của bài
+  if (!Number.isFinite(n) || n < 0 || n > 10) return null;
+  return n;
 }
 
-function askOperator(message) {
-  const allowed = ["+", "-", "*", "/"];
-
-  while (true) {
-    const raw = prompt(message);
-    if (raw === null) return null;
-
-    const op = String(raw).trim();
-    if (allowed.includes(op)) return op;
-
-    alert("Phép tính không hợp lệ. Chỉ chấp nhận: +, -, *, /");
-  }
+function calcAverage(math, physics, chemistry) {
+  return (math + physics + chemistry) / 3;
 }
 
-function calc(a, b, op) {
-  switch (op) {
-    case "+": return a + b;
-    case "-": return a - b;
-    case "*": return a * b;
-    case "/": return b === 0 ? null : a / b;
-    default: return null;
-  }
-}
+function handleCalc() {
+  const math = parseScore(mathEl.value);
+  const physics = parseScore(physicsEl.value);
+  const chemistry = parseScore(chemistryEl.value);
 
-// ===== Run =====
-(function run() {
-  const a = askNumber("Mời bạn nhập vào số a");
-  if (a === null) return;
-
-  const b = askNumber("Mời bạn nhập vào số b");
-  if (b === null) return;
-
-  const op = askOperator("Mời bạn nhập vào các phép tính (+, -, *, /)");
-  if (op === null) return;
-
-  const result = calc(a, b, op);
-
-  if (result === null) {
-    alert(`Không thể thực hiện phép tính: ${a} ${op} ${b} (không chia được cho 0).`);
+  if (math === null || physics === null || chemistry === null) {
+    output.textContent = "Vui lòng nhập điểm hợp lệ (0 - 10) cho cả 3 môn.";
     return;
   }
 
-  alert(`Kết quả của phép tính trên: ${a} ${op} ${b} = ${result}`);
-})();
+  const avg = calcAverage(math, physics, chemistry);
+
+  output.textContent =
+    `Math: ${math} | Physics: ${physics} | Chemistry: ${chemistry} ` +
+    `→ Điểm trung bình: ${avg.toFixed(2)}`;
+}
+
+calcBtn.addEventListener("click", handleCalc);
+
+// Enter để tính nhanh
+[mathEl, physicsEl, chemistryEl].forEach((el) => {
+  el.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") handleCalc();
+  });
+});

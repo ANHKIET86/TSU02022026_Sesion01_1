@@ -1,43 +1,70 @@
-let products = [
-  { id: 1, name: 'Milk', count: 100 },
-  { id: 2, name: 'Orange', count: 100 },
-  { id: 3, name: 'Butter', count: 100 }
-];
-
-// Hiển thị
-function showProducts() {
-  let list = document.getElementById("list");
-  list.innerHTML = "";
-
-  products.forEach(p => {
-      let li = document.createElement("li");
-      li.textContent = `id: ${p.id} | name: ${p.name} | count: ${p.count}`;
-      list.appendChild(li);
-  });
-}
-
-// Thêm (hard-code giống bài)
-function addProduct() {
-  let newProduct = { id: 4, name: "Apple", count: 50 };
-  products.push(newProduct);
-  alert("Đã thêm Apple");
-  showProducts();
-}
-
-// Xóa id = 2
-function deleteId2() {
-  products = products.filter(p => p.id !== 2);
-  alert("Đã xóa id = 2");
-  showProducts();
-}
-
-// Tìm Butter
-function findButter() {
-  let result = products.find(p => p.name === "Butter");
-
-  if (result) {
-      alert(`Tìm thấy: id=${result.id}, count=${result.count}`);
+let showPassword = document.querySelector('.show-password');
+let inputPassword = document.querySelector('#password');
+// sự kiện show password và hide password
+showPassword.onclick = function () {
+  if (inputPassword.getAttribute('type') === 'password') {
+    inputPassword.setAttribute('type', 'text');
   } else {
-      alert("Không có Butter");
+    inputPassword.setAttribute('type', 'password');
   }
+};
+
+let users = JSON.parse(localStorage.getItem('users')) || [];
+
+let form = document.getElementById('form');
+
+let errorEmail = document.querySelector('.error-email');
+let errorPassword = document.querySelector('.error-password');
+
+form.onsubmit = function (e) {
+  e.preventDefault();
+  if (validateData(form)) {
+    if (checkEmailAndPassword(form.email.value, form.password.value)) {
+      alert('Đăng nhập thành công');
+    } else {
+      alert('Email hoặc mật khẩu sai');
+    }
+  }
+};
+
+function checkEmailAndPassword(email, password) {
+  return users.some((el) => el.email === email && el.password === password);
+}
+
+function validateData(form) {
+  let check = true;
+  // validate email
+  if (form.email.value === '') {
+    // trường hợp email để trống
+    errorEmail.innerText = 'Email không được để trống';
+    check = false;
+  } else if (!validEmail(form.email.value)) {
+    // kiểm tra validate email hợp lệ bằng pattern (regex)
+    errorEmail.innerText = 'Email không hợp lệ';
+    check = false;
+  } else {
+    errorEmail.innerText = '';
+  }
+  // validate password
+  if (form.password.value === '') {
+    // trường hợp password để trống
+    errorPassword.innerText = 'Password không được để trống';
+    check = false;
+  } else if (!validPassword(form.password.value)) {
+    // kiểm tra validate password hợp lệ bằng pattern (regex)
+    errorPassword.innerText = 'Password không hợp lệ';
+    check = false;
+  } else {
+    errorPassword.innerText = '';
+  }
+  return check;
+}
+
+function validEmail(email) {
+  // sử dụng regex -> regular expression
+  return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
+}
+
+function validPassword(password) {
+  return /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password);
 }

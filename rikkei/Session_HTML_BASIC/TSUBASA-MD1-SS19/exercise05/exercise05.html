@@ -1,11 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <script src="./exercise05.js"></script>
-  </body>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bookmark App</title>
+  <link rel="stylesheet" href="./exercise05.css" />
+</head>
+<body>
+  <div class="wrap">
+    <button id="openModalBtn" class="btn-add">ADD BOOKMARK</button>
+
+    <section id="bookmarks" class="grid"></section>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal__header">
+        <div id="modalTitle" class="modal__title">Add Bookmark</div>
+        <button class="modal__close" id="closeModalBtn" aria-label="Close">×</button>
+      </div>
+
+      <form id="form" class="modal__body">
+        <label class="field">
+          <span>Website Name</span>
+          <input id="nameInput" type="text" placeholder="e.g. YouTube" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>Website URL</span>
+          <input id="urlInput" type="url" placeholder="https://youtube.com" autocomplete="off" />
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn-save">Save</button>
+        </div>
+
+        <p class="error" id="error"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="./exercise05.js"></script>
+</body>
 </html>

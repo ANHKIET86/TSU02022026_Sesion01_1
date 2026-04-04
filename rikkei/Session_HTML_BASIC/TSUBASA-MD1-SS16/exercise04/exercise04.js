@@ -1,16 +1,7 @@
-const original = {
-  name: 'Bob',
-  age: 30,
-  address: {
-    city: 'TPHCM',
-  },
-};
+function isEven(number) {
+  return number % 2 === 0;
+}
 
-const copy = JSON.parse(JSON.stringify(original));
-
-original.address.city = 'TPHCM mới';
-
-copy.name = 'Kelvin';
-
-console.log(original);
-console.log(copy);
+let number = Number(prompt('Nhập vào số cần kiểm tra: ')); // prompt nhập vào là chuỗi
+let result = isEven(number);
+console.log(`Kêt quả là ${result}`);

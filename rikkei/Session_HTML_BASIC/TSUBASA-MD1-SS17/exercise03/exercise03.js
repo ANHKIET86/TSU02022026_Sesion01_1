@@ -1,5 +1,10 @@
-function sum(firstNumber, secondNumber) {
-  return firstNumber + secondNumber;
-}
+let btnOpen = document.querySelector('.btn-open');
+let btnClose = document.querySelector('.btn-close');
+let overlay = document.querySelector('.overlay');
+btnOpen.onclick = function () {
+  overlay.style.display = 'block';
+};
 
-alert(sum(1, 2));
+btnClose.onclick = function () {
+  overlay.style.display = 'none';
+};

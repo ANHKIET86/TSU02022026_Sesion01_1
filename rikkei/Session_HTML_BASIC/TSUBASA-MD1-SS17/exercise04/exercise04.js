@@ -1,7 +1,7 @@
-function isEven(number) {
-  return number % 2 === 0;
-}
-
-let number = Number(prompt('Nhập vào số cần kiểm tra: ')); // prompt nhập vào là chuỗi
-let result = isEven(number);
-console.log(`Kêt quả là ${result}`);
+let items = document.querySelectorAll('.item');
+items.forEach((el) => {
+  el.onmouseover = function () {
+    let bgColor = el.getAttribute('id'); // lấy dữ liệu ở thuộc tính id của thẻ
+    document.body.style.backgroundColor = bgColor;
+  };
+});

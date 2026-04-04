@@ -1,52 +1,31 @@
-const weightEl = document.getElementById("weight");
-const heightEl = document.getElementById("height");
-const calcBtn = document.getElementById("calcBtn");
+const RATE = 25000; // 1 USD = 25,000 VND
 
-function parsePositiveNumber(value) {
-  const n = Number(String(value).trim());
-  if (!Number.isFinite(n) || n <= 0) return null;
-  return n;
-}
+function askUSD() {
+  while (true) {
+    const raw = prompt("Nhập số tiền Đô la Mỹ (USD):");
+    if (raw === null) return null; // Cancel
 
-function calcBMI(weightKg, heightM) {
-  return weightKg / (heightM * heightM);
-}
+    const usd = Number(String(raw).trim());
+    if (Number.isFinite(usd) && usd >= 0) return usd;
 
-// Phân loại WHO (thường dùng trong bài tập)
-function classifyWHO(bmi) {
-  if (bmi < 18.5) return "Cân nặng thấp (gầy)";
-  if (bmi < 25)   return "Bình thường";
-  if (bmi < 30)   return "Tiền béo phì (thừa cân)";
-  if (bmi < 35)   return "Béo phì độ I";
-  if (bmi < 40)   return "Béo phì độ II";
-  return "Béo phì độ III";
-}
-
-function handleCalc() {
-  const w = parsePositiveNumber(weightEl.value);
-  const h = parsePositiveNumber(heightEl.value);
-
-  if (w === null) {
-    alert("Vui lòng nhập cân nặng hợp lệ (kg > 0).");
-    weightEl.focus();
-    return;
+    alert("Số tiền không hợp lệ. Vui lòng nhập lại (USD >= 0).");
   }
-  if (h === null) {
-    alert("Vui lòng nhập chiều cao hợp lệ (m > 0).");
-    heightEl.focus();
-    return;
-  }
-
-  const bmi = calcBMI(w, h);
-  const type = classifyWHO(bmi);
-
-  alert(`BMI = ${bmi.toFixed(2)}\nPhân loại: ${type}`);
 }
 
-calcBtn.addEventListener("click", handleCalc);
+function formatVND(vnd) {
+  // format kiểu VN: 1.234.567 đ
+  return vnd.toLocaleString("vi-VN") + " đ";
+}
 
-[weightEl, heightEl].forEach(el => {
-  el.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") handleCalc();
-  });
-});
+(function run() {
+  const usd = askUSD();
+  if (usd === null) return;
+
+  const vnd = usd * RATE;
+
+  alert(
+    `Tỷ giá: 1$ = ${RATE.toLocaleString("vi-VN")} đ\n` +
+    `Số tiền USD: ${usd}\n` +
+    `Quy đổi: ${formatVND(vnd)}`
+  );
+})();

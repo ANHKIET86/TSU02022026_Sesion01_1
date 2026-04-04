@@ -1,38 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      .flex {
-        display: flex;
-        gap: 10px;
-      }
-      .item {
-        width: 100px;
-        height: 100px;
-        border: 2px solid black;
-      }
-      .item:nth-child(1) {
-        background-color: yellow;
-      }
-      .item:nth-child(2) {
-        background-color: green;
-      }
-      .item:nth-child(3) {
-        background-color: gray;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Change background color</h1>
-    <p>Mouse over the square</p>
-    <div class="flex">
-      <div class="item" id="yellow"></div>
-      <div class="item" id="green"></div>
-      <div class="item" id="gray"></div>
-    </div>
-    <script src="./exercise04.js"></script>
-  </body>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Virtual Keyboard</title>
+    <link rel="stylesheet" href="./exercise04.css">
+</head>
+<body>
+
+<div class="container">
+    <input type="text" id="display" placeholder="Nhập ở đây..." readonly>
+
+    <div class="keyboard" id="keyboard"></div>
+</div>
+
+<script src="./exercise04.js"></script>
+</body>
 </html>

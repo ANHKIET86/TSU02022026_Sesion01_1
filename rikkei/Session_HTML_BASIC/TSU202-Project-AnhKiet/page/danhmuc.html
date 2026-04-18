@@ -1,0 +1,208 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Danh mục</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./danhmuc.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="../img/FireIcon.png" alt="FireIcon" />
+        <span>Ecommerce</span>
+      </div>
+
+      <nav class="nav">
+        <a href="./thongke.html"><i class="fa-solid fa-house"></i><span>Thống kê</span></a>
+        <a class="is-active" href="./danhmuc.html"><i class="fa-regular fa-folder"></i><span>Danh mục</span></a>
+        <a href="./sanpham.html"><i class="fa-solid fa-box"></i><span>Sản phẩm</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar__right">
+          <button class="icon-btn" aria-label="Thông báo">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+
+          <div class="user-menu">
+            <button class="user-menu__btn" type="button" aria-label="User menu">
+              <div class="avatar">
+                <img src="../img/danhmucavatar.png" alt="avatar">
+              </div>
+            </button>
+            <div class="user-menu__dropdown">
+              <a class="user-menu__item" id="logoutBtn" href="./dangnhap.html">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="page-head">
+          <h1 class="h1">Danh mục</h1>
+          <button class="btn btn-primary" id="btnOpenAdd" type="button">Thêm mới danh mục</button>
+        </div>
+
+        <div class="toolbar">
+          <div class="toolbar__filters">
+            <div class="control control--select">
+              <select id="filterStatus" aria-label="Lọc theo trạng thái">
+                <option value="">Lọc theo trạng thái</option>
+                <option value="on">Đang hoạt động</option>
+                <option value="off">Ngừng hoạt động</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <div class="control control--search">
+              <input id="searchCategory" type="text" placeholder="Tìm kiếm danh mục theo tên" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-wrap">
+            <table class="table" id="categoryTable">
+              <thead>
+                <tr>
+                  <th>Mã danh mục <i class="fa-solid fa-arrow-down-short-wide sort"></i></th>
+                  <th>Tên danh mục <i class="fa-solid fa-arrow-down-short-wide sort"></i></th>
+                  <th>Trạng thái</th>
+                  <th class="th-center">Chức năng</th>
+                </tr>
+              </thead>
+              <tbody id="categoryTbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <div class="overlay" id="editOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="editTitle">
+      <div class="modal__head">
+        <h3 class="modal__title" id="editTitle">Cập nhật danh mục</h3>
+        <button class="modal__close" id="btnCloseModal" type="button" aria-label="Đóng">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="editForm">
+        <div class="modal__body">
+          <div class="form-row">
+            <label class="label" for="fId">Mã danh mục <span class="req">*</span></label>
+            <input class="field" id="fId" name="id" readonly />
+          </div>
+
+          <div class="form-row">
+            <label class="label" for="fName">Tên danh mục <span class="req">*</span></label>
+            <input class="field" id="fName" name="name" />
+            <div class="help-error" id="errEditName">Tên danh mục không được để trống</div>
+          </div>
+
+          <div class="form-row">
+            <label class="label">Trạng thái</label>
+            <div class="radio-group">
+              <label class="radio">
+                <input type="radio" name="status" value="on" />
+                Đang hoạt động
+              </label>
+              <label class="radio">
+                <input type="radio" name="status" value="off" />
+                Ngừng hoạt động
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__foot">
+          <button type="button" class="btn btn-secondary" id="btnCancel">Hủy</button>
+          <button type="submit" class="btn btn-primary">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="overlay" id="addOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="addTitle">
+      <div class="modal__head">
+        <h3 class="modal__title" id="addTitle">Thêm mới danh mục</h3>
+        <button class="modal__close" id="btnCloseAdd" type="button" aria-label="Đóng">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="addForm" novalidate>
+        <div class="modal__body">
+          <div class="form-row">
+            <label class="label" for="aId">Mã danh mục <span class="req">*</span></label>
+            <input class="field" id="aId" name="id" placeholder="VD: DM009" />
+            <div class="help-error" id="errId">Mã danh mục không được để trống</div>
+          </div>
+
+          <div class="form-row">
+            <label class="label" for="aName">Tên danh mục <span class="req">*</span></label>
+            <input class="field" id="aName" name="name" placeholder="Nhập tên danh mục" />
+            <div class="help-error" id="errName">Tên danh mục không được để trống</div>
+          </div>
+
+          <div class="form-row">
+            <label class="label">Trạng thái</label>
+            <div class="radio-group">
+              <label class="radio">
+                <input type="radio" name="status" value="on" checked />
+                Đang hoạt động
+              </label>
+              <label class="radio">
+                <input type="radio" name="status" value="off" />
+                Ngừng hoạt động
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__foot">
+          <button type="button" class="btn btn-secondary" id="btnCancelAdd">Hủy</button>
+          <button type="submit" class="btn btn-primary">Thêm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="confirm-overlay" id="confirmOverlay" aria-hidden="true">
+    <div class="confirm" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <div class="confirm__body">
+        <div class="confirm__icon">
+          <i class="fa-solid fa-circle-exclamation"></i>
+        </div>
+        <div>
+          <h3 class="confirm__title" id="confirmTitle">Xác nhận</h3>
+          <p class="confirm__text" id="confirmText">Bạn có chắc chắn muốn xóa không?</p>
+        </div>
+      </div>
+
+      <div class="confirm__foot">
+        <button type="button" class="btn btn-secondary" id="btnConfirmCancel">Hủy</button>
+        <button type="button" class="btn btn-danger" id="btnConfirmOk">Xóa</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/danhmuc.js"></script>
+</body>
+</html>
+

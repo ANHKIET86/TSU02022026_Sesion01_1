@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thống kê</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./danhmuc.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="../img/FireIcon.png" alt="FireIcon" />
+        <span>Ecommerce</span>
+      </div>
+
+      <nav class="nav">
+        <a class="is-active" href="./thongke.html">
+          <i class="fa-solid fa-house"></i><span>Thống kê</span>
+        </a>
+        <a href="./danhmuc.html">
+          <i class="fa-regular fa-folder"></i><span>Danh mục</span>
+        </a>
+        <a href="./sanpham.html">
+          <i class="fa-solid fa-box"></i><span>Sản phẩm</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- Topbar -->
+      <header class="topbar">
+        <div class="topbar__right">
+          <button class="icon-btn" aria-label="Thông báo">
+            <i class="fa-regular fa-bell"></i>
+          </button>
+
+          <!-- Avatar hover -> dropdown logout -->
+          <div class="user-menu">
+            <button class="user-menu__btn" type="button" aria-label="User menu">
+              <div class="avatar">
+                <img
+                  src="../img/danhmucavatar.png" alt="avatar"
+                >
+              </div>
+            </button>
+
+            <div class="user-menu__dropdown">
+              <a class="user-menu__item" id="logoutBtn" href="./dangnhap.html">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Content (trắng + chữ Thống kê) -->
+      <section class="content">
+        <div class="page-head">
+          <h1 class="h1">Thống kê</h1>
+          <div></div>
+        </div>
+
+        <!-- để trống đúng như mẫu -->
+        <div style="height: 60vh;"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- (Tuỳ chọn) xử lý click logout -->
+  <script>
+    document.getElementById("logoutBtn")?.addEventListener("click", (e) => {
+      e.preventDefault();
+      // demo: chuyển về trang login (nếu bạn có)
+      // window.location.href = "./login.html";
+      alert("Log out");
+    });
+  </script>
+  <!-- Confirm delete -->
+<div class="confirm-overlay" id="confirmOverlay" aria-hidden="true">
+  <div class="confirm" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <div class="confirm__body">
+      <div class="confirm__icon">
+        <i class="fa-solid fa-circle-exclamation"></i>
+      </div>
+      <div>
+        <h3 class="confirm__title" id="confirmTitle">Xác nhận</h3>
+        <p class="confirm__text" id="confirmText">
+          Bạn có chắc chắn muốn xoá không?
+        </p>
+      </div>
+    </div>
+    <div class="confirm__foot">
+      <button type="button" class="btn btn-secondary" id="btnConfirmCancel">Hủy</button>
+      <button type="button" class="btn btn-danger" id="btnConfirmOk">Xóa</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cyber</title>
+  <link rel="stylesheet" href="./home.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#">
+        <img src="../img/Logo.png" alt="cyber" />
+      </a>
+
+      <div class="search">
+        <a class="cat" href="#"><img src="../img/Searchicon.png" alt=""></a>
+        <input placeholder="Tìm kiếm" />
+      </div>
+
+      <nav class="nav">
+        <a href="#" class="nav__link is-active">Trang chủ</a>
+        <a href="#" class="nav__link">Giới thiệu</a>
+        <a href="#" class="nav__link">Liên hệ</a>
+      </nav>
+
+      <div class="actions">
+        <a class="cat" href="#"><img src="../img/headerFavorites.png" alt=""></a>
+        <a class="cat" href="#"><img src="../img/headerCart.png" alt=""></a>
+
+        <!-- USER DROPDOWN -->
+        <div class="user">
+          <a class="user__btn" id="userBtn" href="javascript:void(0)">
+            <img src="../img/headerUser.png" alt="">
+          </a>
+
+          <div class="user__menu" id="userMenu" role="menu">
+            <a class="user__item" role="menuitem" href="./dangnhap.html">Đăng nhập</a>
+            <button class="user__item user__logout" role="menuitem" id="logoutBtn" type="button">Logout
+          </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catbat -->
+    <div class="catbar">
+      <div class="container catbar__inner">
+        <a class="catbar__item" href="#">
+          <img src="../img/menuphone.png" alt="">
+        </a>
+        <span class="catbar__sep" aria-hidden="true"></span>
+
+        <a class="catbar__item" href="#">
+          <img src="../img/menulaptop.png" alt="">
+        </a>
+        <span class="catbar__sep" aria-hidden="true"></span>
+
+        <a class="catbar__item" href="#">
+          <img src="../img/menuapplewatch.png" alt="">
+        </a>
+        <span class="catbar__sep" aria-hidden="true"></span>
+
+        <a class="catbar__item" href="#">
+          <img src="../img/menuCamera.png" alt="">
+        </a>
+        <span class="catbar__sep" aria-hidden="true"></span>
+
+        <a class="catbar__item" href="#">
+          <img src="../img/menuheadphone.png" alt="">
+        </a>
+        <span class="catbar__sep" aria-hidden="true"></span>
+
+        <a class="catbar__item" href="#">
+          <img src="../img/menugaming.png" alt="">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+  <div class="hero__frame">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <p class="hero__kicker">Đột phá công nghệ</p>
+        <h1 class="hero__title">IPhone 14 <span>Pro</span></h1>
+        <p class="hero__desc">Được tạo ra để thay đổi mọi thứ để tốt hơn. Cho tất cả mọi người</p>
+        <a class="btn btn--ghost" href="#">Mua ngay</a>
+      </div>
+
+      <div class="hero__img">
+        <img src="../img/iphone.png" alt="iphone">
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- categories -->
+  <section class="categories">
+  <div class="container categories__head">
+    <h2 class="categories__title">Danh mục sản phẩm</h2>
+
+    <div class="categories__arrows">
+      <button class="arrow" aria-label="Prev"></button>
+      <button class="arrow" aria-label="Next"></button>
+    </div>
+  </div>
+
+  <div class="container categories__grid">
+    <a class="catcard" href="#">Điện thoại</a>
+    <a class="catcard" href="#">Đồng hồ</a>
+    <a class="catcard" href="#">Cameras</a>
+    <a class="catcard" href="#">Tai nghe</a>
+    <a class="catcard" href="#">Máy tính</a>
+    <a class="catcard" href="#">Gaming</a>
+  </div>
+</section>
+
+  <!-- PRODUCTS -->
+  <main class="main">
+    <section class="container">
+      <div class="tabs">
+        <button class="tab is-active">New Arrival</button>
+        <button class="tab">Bestseller</button>
+        <button class="tab">Featured Products</button>
+      </div>
+
+      <div class="grid">
+        <!-- 1 -->
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/iphone14promax.png" alt=""></div>
+          <p class="card__name">Apple iPhone 14 Pro Max 128GB Deep Purple</p>
+          <div class="card__price">$900</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <!-- 2 -->
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/bmpcc6k.png" alt=""></div>
+          <p class="card__name">Blackmagic Pocket Cinema Camera 6K</p>
+          <div class="card__price">$2535</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <!-- 3 -->
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/applewatch.png" alt=""></div>
+          <p class="card__name">Apple Watch Series 9 GPS 41mm Starlight Aluminium</p>
+          <div class="card__price">$399</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <!-- 4 -->
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/airpods.png" alt=""></div>
+          <p class="card__name">AirPods Max Silver</p>
+          <div class="card__price">$549</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <!-- 5 -->
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/gwatch.png" alt=""></div>
+          <p class="card__name">Samsung Galaxy Watch6 Classic 47mm Black</p>
+          <div class="card__price">$369</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <!-- 6 -->
+        <article class="card">
+          <button class="fav is-active" aria-label="fav">♥</button>
+          <div class="card__img"><img src="../img/zfold.png" alt=""></div>
+          <p class="card__name">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</p>
+          <div class="card__price">$1799</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <!-- 7 -->
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/buds.png" alt=""></div>
+          <p class="card__name">Galaxy Buds FE Graphite</p>
+          <div class="card__price">$99.99</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <!-- 8 -->
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/ipad.png" alt=""></div>
+          <p class="card__name">Apple iPad 9 10.2" 64GB Wi‑Fi Silver (MK2L3) 2021</p>
+          <div class="card__price">$398</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+      </div>
+
+      <h2 class="section-title">Sản phẩm giảm giá</h2>
+
+      <div class="grid grid--4">
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/iphone14pro.png" alt=""></div>
+          <p class="card__name">Apple iPhone 14 Pro 512GB Gold (MQ233)</p>
+          <div class="card__price">$1437</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/airpods.png" alt=""></div>
+          <p class="card__name">AirPods Max Silver</p>
+          <div class="card__price">$549</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/applewatch.png" alt=""></div>
+          <p class="card__name">Apple Watch Series 9 GPS 41mm Starlight Aluminium</p>
+          <div class="card__price">$399</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+
+        <article class="card">
+          <button class="fav" aria-label="fav">♡</button>
+          <div class="card__img"><img src="../img/iphone141TB.png" alt=""></div>
+          <p class="card__name">Apple iPhone 14 Pro 1TB Gold (MQ2V3)</p>
+          <div class="card__price">$1499</div>
+          <a class="btn btn--solid" href="#">Mua ngay</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- PROMO (CTA above footer) -->
+  <section class="promo">
+    <div class="promo__bg">
+      <div class="promo__content">
+        <h2>Ưu đãi mùa hè</h2>
+        <p>Nhanh tay săn đón các sản phẩm chất lượng</p>
+        <a class="btn btn--ghost" href="#">Mua ngay</a>
+      </div>
+
+      <!-- decorations -->
+      <img class="promo__ipad1" src="../img/banneripad1.png" alt="">
+      <img class="promo__ipad2" src="../img/banneripad2.png" alt="">
+      <img class="promo__iphone" src="../img/banneriphone.png" alt="">
+      <img class="promo__watch" src="../img/bannerapplewatch.png" alt="">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+  <div class="container footer__inner">
+    <!-- left -->
+    <div class="footer__brand">
+      <img class="footer__logo" src="../img/Logo.png" alt="cyber" />
+
+      <p class="footer__desc">
+        Chúng tôi cung cấp các sản phẩm công nghệ, giúp khách hàng thỏa sức trải nghiệm
+        các dịch vụ, tiện ích nhanh chóng và hiệu quả.
+      </p>
+
+      <div class="footer__social">
+        <a href="#" aria-label="Twitter">
+          <img src="../img/footerTwitter.png" alt="Twitter" />
+        </a>
+        <a href="#" aria-label="Facebook">
+          <img src="../img/footerFacebook.png" alt="Facebook" />
+        </a>
+        <a href="#" aria-label="TikTok">
+          <img src="../img/footerTiktok.png" alt="TikTok" />
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="../img/footerInstagram.png" alt="Instagram" />
+        </a>
+      </div>
+    </div>
+
+    <!-- middle -->
+    <div class="footer__col">
+      <h4>Dịch vụ</h4>
+      <a href="#">Chương trình khuyến mãi</a>
+      <a href="#">Gift cards</a>
+      <a href="#">Tin dùng và thanh toán</a>
+      <a href="#">Dịch vụ hợp đồng</a>
+      <a href="#">Ví tiền điện tử</a>
+      <a href="#">Thanh toán</a>
+    </div>
+
+    <!-- right -->
+    <div class="footer__col">
+      <h4>Hỗ trợ cho người mua</h4>
+      <a href="#">Tìm kiếm đơn đặt hàng</a>
+      <a href="#">Điều khoản giao hàng</a>
+      <a href="#">Trao đổi và trả hàng</a>
+      <a href="#">Chính sách bảo hành</a>
+      <a href="#">Câu hỏi thường gặp</a>
+      <a href="#">Chính sách và điều khoản</a>
+    </div>
+  </div>
+</footer>
+  <script src="../js/home.js"></script>
+</body>
+</html>

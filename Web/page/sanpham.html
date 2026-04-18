@@ -1,0 +1,277 @@
+﻿<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sản phẩm</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./danhmuc.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="../img/FireIcon.png" alt="FireIcon" />
+        <span>Ecommerce</span>
+      </div>
+
+      <nav class="nav">
+        <a href="./thongke.html"><i class="fa-solid fa-house"></i><span>Thống kê</span></a>
+        <a href="./danhmuc.html"><i class="fa-regular fa-folder"></i><span>Danh mục</span></a>
+        <a class="is-active" href="./sanpham.html"><i class="fa-regular fa-folder-open"></i><span>Sản phẩm</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar__right">
+          <button class="icon-btn" aria-label="Thông báo">
+            <i class="fa-solid fa-bell"></i>
+          </button>
+
+          <div class="user-menu">
+            <button class="user-menu__btn" type="button" aria-label="User menu">
+              <div class="avatar">
+                <img src="../img/danhmucavatar.png" alt="avatar">
+              </div>
+            </button>
+            <div class="user-menu__dropdown">
+              <a class="user-menu__item" id="logoutBtn" href="./dangnhap.html">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="content">
+        <div class="page-head">
+          <h1 class="h1">Sản phẩm</h1>
+          <button class="btn btn-primary" id="btnOpenAddProduct" type="button">Thêm mới sản phẩm</button>
+        </div>
+
+        <div class="toolbar">
+          <div class="toolbar__filters">
+            <div class="control control--select">
+              <select id="filterCategory" aria-label="Lọc theo danh mục">
+                <option value="">Lọc theo danh mục</option>
+                <option value="Điện thoại">Điện thoại</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Phụ kiện">Phụ kiện</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <div class="control control--select">
+              <select id="filterStatus" aria-label="Lọc theo trạng thái">
+                <option value="">Lọc theo trạng thái</option>
+                <option value="on">Đang hoạt động</option>
+                <option value="off">Ngừng hoạt động</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+
+            <div class="control control--search">
+              <input id="searchProduct" type="text" placeholder="Tìm kiếm sản phẩm theo tên" />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-wrap">
+            <table class="table" id="productTable">
+              <thead>
+                <tr>
+                  <th>Mã sản phẩm</th>
+                  <th>Tên sản phẩm <i class="fa-solid fa-arrow-down-short-wide sort"></i></th>
+                  <th>Giá <i class="fa-solid fa-arrow-down-short-wide sort"></i></th>
+                  <th>Số lượng</th>
+                  <th>Giảm giá</th>
+                  <th>Trạng thái</th>
+                  <th class="th-center">Chức năng</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-id="SP001" data-name="Iphone 12 Pro" data-category="Điện thoại" data-status="on" data-qty="10" data-price="12000000" data-discount="0" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP001</b></td>
+                  <td class="cell-name">Iphone 12 Pro</td>
+                  <td class="cell-price">12.000.000 đ</td>
+                  <td class="cell-qty">10</td>
+                  <td class="cell-discount">0%</td>
+                  <td class="cell-status"><span class="badge badge--on"><span class="dot"></span>Đang hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+                <tr data-id="SP002" data-name="Samsung Galaxy X20" data-category="Điện thoại" data-status="off" data-qty="100" data-price="21000000" data-discount="5" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP002</b></td>
+                  <td class="cell-name">Samsung Galaxy X20</td>
+                  <td class="cell-price">21.000.000 đ</td>
+                  <td class="cell-qty">100</td>
+                  <td class="cell-discount">5%</td>
+                  <td class="cell-status"><span class="badge badge--off"><span class="dot"></span>Ngừng hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+                <tr data-id="SP003" data-name="Phone 8 Plus" data-category="Điện thoại" data-status="on" data-qty="10" data-price="5000000" data-discount="0" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP003</b></td>
+                  <td class="cell-name">Phone 8 Plus</td>
+                  <td class="cell-price">5.000.000 đ</td>
+                  <td class="cell-qty">10</td>
+                  <td class="cell-discount">0%</td>
+                  <td class="cell-status"><span class="badge badge--on"><span class="dot"></span>Đang hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+                <tr data-id="SP004" data-name="Iphone 14 Pro max" data-category="Điện thoại" data-status="off" data-qty="20" data-price="25000000" data-discount="2" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP004</b></td>
+                  <td class="cell-name">Iphone 14 Pro max</td>
+                  <td class="cell-price">25.000.000 đ</td>
+                  <td class="cell-qty">20</td>
+                  <td class="cell-discount">2%</td>
+                  <td class="cell-status"><span class="badge badge--off"><span class="dot"></span>Ngừng hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+                <tr data-id="SP005" data-name="Oppo X3" data-category="Điện thoại" data-status="off" data-qty="10" data-price="2000000" data-discount="5" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP005</b></td>
+                  <td class="cell-name">Oppo X3</td>
+                  <td class="cell-price">2.000.000 đ</td>
+                  <td class="cell-qty">10</td>
+                  <td class="cell-discount">5%</td>
+                  <td class="cell-status"><span class="badge badge--off"><span class="dot"></span>Ngừng hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+                <tr data-id="SP006" data-name="Iphone 16" data-category="Điện thoại" data-status="off" data-qty="20" data-price="20000000" data-discount="3" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP006</b></td>
+                  <td class="cell-name">Iphone 16</td>
+                  <td class="cell-price">20.000.000 đ</td>
+                  <td class="cell-qty">20</td>
+                  <td class="cell-discount">3%</td>
+                  <td class="cell-status"><span class="badge badge--off"><span class="dot"></span>Ngừng hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+                <tr data-id="SP007" data-name="Iphone 7 Plus" data-category="Điện thoại" data-status="on" data-qty="10" data-price="4000000" data-discount="4" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP007</b></td>
+                  <td class="cell-name">Iphone 7 Plus</td>
+                  <td class="cell-price">4.000.000 đ</td>
+                  <td class="cell-qty">10</td>
+                  <td class="cell-discount">4%</td>
+                  <td class="cell-status"><span class="badge badge--on"><span class="dot"></span>Đang hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+                <tr data-id="SP008" data-name="Samsung S20 Ultra" data-category="Điện thoại" data-status="off" data-qty="15" data-price="30000000" data-discount="2" data-image="https://suckhoedoisong.qltns.mediacdn.vn/Images/thanhloan/2016/06/05/tac-dung-cua-qua-cam-2.jpg" data-desc="">
+                  <td class="cell-id"><b>SP008</b></td>
+                  <td class="cell-name">Samsung S20 Ultra</td>
+                  <td class="cell-price">30.000.000 đ</td>
+                  <td class="cell-qty">15</td>
+                  <td class="cell-discount">2%</td>
+                  <td class="cell-status"><span class="badge badge--off"><span class="dot"></span>Ngừng hoạt động</span></td>
+                  <td class="th-center"><div class="actions"><button class="icon-action delete" data-action="delete" type="button" title="Xóa"><i class="fa-regular fa-trash-can"></i></button><button class="icon-action edit" data-action="edit" type="button" title="Sửa"><i class="fa-regular fa-pen-to-square"></i></button></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="pagination" id="pagination"></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <div class="overlay" id="productOverlay" aria-hidden="true">
+    <div class="modal modal--wide">
+      <div class="modal__head">
+        <h3 class="modal__title" id="productModalTitle">Thêm mới sản phẩm</h3>
+        <button class="modal__close" id="btnCloseProduct" type="button" aria-label="Đóng"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <form id="productForm">
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="label" for="pId">Mã sản phẩm <span class="req">*</span></label>
+            <input class="input" id="pId" name="id" />
+            <div class="err" id="errPId">Mã sản phẩm không được để trống</div>
+          </div>
+
+          <div class="form-field">
+            <label class="label" for="pName">Tên sản phẩm <span class="req">*</span></label>
+            <input class="input" id="pName" name="name" />
+            <div class="err" id="errPName">Tên sản phẩm không được để trống</div>
+          </div>
+
+          <div class="form-field">
+            <label class="label" for="pCategory">Danh mục <span class="req">*</span></label>
+            <div class="control control--select control--modal">
+              <select class="input" id="pCategory" name="category">
+                <option value="">Chọn danh mục</option>
+                <option value="Điện thoại">Điện thoại</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Phụ kiện">Phụ kiện</option>
+              </select>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="err" id="errPCategory">Danh mục không được để trống</div>
+          </div>
+
+          <div class="form-field">
+            <label class="label">Trạng thái</label>
+            <div class="status-group">
+              <label class="radio"><input type="radio" name="status" value="on" checked><span>Đang hoạt động</span></label>
+              <label class="radio"><input type="radio" name="status" value="off"><span>Ngừng hoạt động</span></label>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="label" for="pQty">Số lượng</label>
+            <input class="input" id="pQty" name="qty" type="number" min="0" value="1" />
+          </div>
+
+          <div class="form-field">
+            <label class="label" for="pPrice">Giá</label>
+            <input class="input" id="pPrice" name="price" type="number" min="0" value="10000000" />
+          </div>
+
+          <div class="form-field">
+            <label class="label" for="pDiscount">Giảm giá</label>
+            <input class="input" id="pDiscount" name="discount" type="number" min="0" max="100" value="10" />
+          </div>
+
+          <div class="form-field form-field--full">
+            <label class="label" for="pImage">Hình ảnh <span class="req">*</span></label>
+            <input class="input" id="pImage" name="image" />
+            <div class="err" id="errPImage">Hình ảnh không được để trống</div>
+          </div>
+
+          <div class="form-field form-field--full">
+            <label class="label" for="pDesc">Chi tiết sản phẩm</label>
+            <textarea class="input input--textarea" id="pDesc" name="desc" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div class="modal__foot">
+          <button class="btn btn-secondary" id="btnCancelProduct" type="button">Hủy</button>
+          <button class="btn btn-primary" id="btnSubmitProduct" type="submit">Thêm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="confirm-overlay" id="confirmOverlay" aria-hidden="true">
+    <div class="confirm" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <div class="confirm__body">
+        <div class="confirm__icon"><i class="fa-solid fa-circle-exclamation"></i></div>
+        <div>
+          <h3 class="confirm__title" id="confirmTitle">Xác nhận</h3>
+          <p class="confirm__text" id="confirmText">Bạn có chắc chắn muốn xóa không?</p>
+        </div>
+      </div>
+      <div class="confirm__foot">
+        <button type="button" class="btn btn-secondary" id="btnConfirmCancel">Hủy</button>
+        <button type="button" class="btn btn-danger" id="btnConfirmOk">Xóa</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/sanpham.js"></script>
+</body>
+</html>

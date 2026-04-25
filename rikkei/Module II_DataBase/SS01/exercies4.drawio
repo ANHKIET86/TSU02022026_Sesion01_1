@@ -1,0 +1,36 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="SAPU35MMmXFJ0YpZjJcp">
+    <mxGraphModel dx="1094" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;li data-section-id=&quot;xnpdcp&quot; data-start=&quot;190&quot; data-end=&quot;211&quot;&gt;&lt;strong data-start=&quot;192&quot; data-end=&quot;204&quot;&gt;MaDocGia&lt;/strong&gt; (PK)&lt;/li&gt;&lt;li data-section-id=&quot;dkz9sg&quot; data-start=&quot;212&quot; data-end=&quot;225&quot;&gt;TenDocGia&lt;/li&gt;&lt;li data-section-id=&quot;51xbfp&quot; data-start=&quot;226&quot; data-end=&quot;238&quot;&gt;NgaySinh&lt;/li&gt;&lt;li data-section-id=&quot;br3uix&quot; data-start=&quot;239&quot; data-end=&quot;254&quot;&gt;SoDienThoai&lt;/li&gt;" vertex="1">
+          <mxGeometry height="80" width="120" x="180" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="DocGia" vertex="1">
+          <mxGeometry height="30" width="120" x="180" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;li data-section-id=&quot;1nd0cyv&quot; data-start=&quot;297&quot; data-end=&quot;316&quot;&gt;&lt;strong data-start=&quot;299&quot; data-end=&quot;309&quot;&gt;MaSach&lt;/strong&gt; (PK)&lt;/li&gt;&lt;li data-section-id=&quot;154y6su&quot; data-start=&quot;317&quot; data-end=&quot;328&quot;&gt;TenSach&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;15jdgmp&quot; data-start=&quot;329&quot; data-end=&quot;339&quot;&gt;TacGia&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;peeyv3&quot; data-start=&quot;340&quot; data-end=&quot;354&quot;&gt;NamXuatBan&lt;/li&gt;" vertex="1">
+          <mxGeometry height="60" width="86" x="540" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Sach" vertex="1">
+          <mxGeometry height="30" width="86" x="540" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-10" edge="1" parent="1" source="14NZ3ImKRqVEU9LM4CuI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="14NZ3ImKRqVEU9LM4CuI-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-11" edge="1" parent="1" source="14NZ3ImKRqVEU9LM4CuI-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="285" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;li data-section-id=&quot;xnpdcp&quot; data-start=&quot;190&quot; data-end=&quot;211&quot;&gt;&lt;strong data-start=&quot;192&quot; data-end=&quot;204&quot;&gt;MaDocGia&lt;/strong&gt;&amp;nbsp;(PK、FK)&lt;/li&gt;&lt;li&gt;MaSach(PK,FP)&lt;br&gt;NgayMuon&lt;br&gt;NgayTra&lt;/li&gt;" vertex="1">
+          <mxGeometry height="90" width="120" x="350" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="14NZ3ImKRqVEU9LM4CuI-9" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="MuonSach" vertex="1">
+          <mxGeometry height="30" width="120" x="350" y="210" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

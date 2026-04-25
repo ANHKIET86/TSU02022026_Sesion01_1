@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Trang-1" id="J3pcbvg-aiJzJ6BxUzAg">
+    <mxGraphModel dx="1094" dy="644" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9aUFlHm0X1pVpgoo5HGI-11" edge="1" parent="1" source="9aUFlHm0X1pVpgoo5HGI-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="9aUFlHm0X1pVpgoo5HGI-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9aUFlHm0X1pVpgoo5HGI-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="MaSV (PK)&lt;br&gt;TenSV&lt;br&gt;Ngay thang nam sinh&lt;br&gt;Gioi tinh&lt;br&gt;MaLop (FK)" vertex="1">
+          <mxGeometry height="80" width="120" x="210" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9aUFlHm0X1pVpgoo5HGI-7" edge="1" parent="1" source="9aUFlHm0X1pVpgoo5HGI-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="9aUFlHm0X1pVpgoo5HGI-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9aUFlHm0X1pVpgoo5HGI-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Sinh viên" vertex="1">
+          <mxGeometry height="30" width="120" x="210" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="9aUFlHm0X1pVpgoo5HGI-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;" value="&lt;li data-section-id=&quot;1035dcn&quot; data-start=&quot;375&quot; data-end=&quot;402&quot;&gt;&lt;strong data-start=&quot;377&quot; data-end=&quot;386&quot;&gt;MaLop&lt;/strong&gt; (PK)&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;1cu73j4&quot; data-start=&quot;403&quot; data-end=&quot;423&quot;&gt;TenLop&amp;nbsp;&lt;br&gt;&lt;/li&gt;&lt;li data-section-id=&quot;e8s3e5&quot; data-start=&quot;424&quot; data-end=&quot;461&quot; style=&quot;&quot;&gt;Nienkhoa&lt;/li&gt;" vertex="1">
+          <mxGeometry height="60" width="86" x="414" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="9aUFlHm0X1pVpgoo5HGI-6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Lop" vertex="1">
+          <mxGeometry height="30" width="86" x="414" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="9aUFlHm0X1pVpgoo5HGI-12" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="1-n" vertex="1">
+          <mxGeometry height="30" width="60" x="330" y="230" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

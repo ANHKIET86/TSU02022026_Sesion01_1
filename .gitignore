@@ -3,3 +3,7 @@
 .DS_Store
 **/.DS_Store
 *.dmg
+*.dmg
+build/
+*.dmg
+build/

@@ -192,7 +192,7 @@ INNER JOIN products AS p
 ON od.product_id = p.product_id
 WHERE p.cat_id = (
     SELECT cat_id
-    FROM products
+    FROM productscategories
     GROUP BY cat_id
     ORDER BY COUNT(*) DESC
     LIMIT 1
